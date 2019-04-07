@@ -1,4 +1,5 @@
-// fade
-// options.noCross - Do not use crossfade
-function ws_fade(d,f,c){var b=jQuery,l=b(this);b(".ws_list",c);var e={position:"absolute",left:0,top:0,width:"100%",height:"100%",maxHeight:"none",maxWidth:"none",transform:"translate3d(0,0,0)"},g=b("<div>").addClass("ws_effect ws_fade").css(e).css("overflow","hidden").appendTo(c);this.go=function(c,m){var a=b(f.get(c)),h={width:a.width(),height:a.height()},a=a.clone().css(e).css(h).appendTo(g);if(!d.noCross){var k=b(f.get(m)).clone().css(e).css(h).appendTo(g);wowAnimate(k,{opacity:1},{opacity:0},
-d.duration,function(){k.remove()})}wowAnimate(a,{opacity:0},{opacity:1},d.duration,function(){l.trigger("effectEnd");a.remove()})}};
+// parallax
+// options.parallax = [0, 1] - offset width*parallax
+function ws_parallax(h,e,c){var d=jQuery,t=d(this),u=c.find(".ws_list"),q=h.parallax||.25,l=d("<div>").css({position:"absolute",top:0,left:0,width:"100%",height:"100%",overflow:"hidden"}).addClass("ws_effect ws_parallax").appendTo(c),k=d("<div>").css({position:"absolute",left:0,top:0,overflow:"hidden",width:"100%",height:"100%",transform:"translate3d(0,0,0)"}).appendTo(l),m=k.clone().appendTo(l);this.go=function(v,r,f){var a=d(e.get(r)),a={width:a.width(),height:a.height(),marginTop:a.css("marginTop"),
+marginLeft:a.css("marginLeft")};f=f?1:-1;var n=d(e.get(r)).clone().css(a).appendTo(k),p=d(e.get(v)).clone().css(a).appendTo(m),g=c.width()||h.width;c.height();u.hide();wowAnimate(function(b){b=d.easing.swing(b);var a=Math.round(f*b*g*1E3)/1E3,c=Math.round(f*(-g+b*g)*1E3)/1E3,e=Math.round(-f*g*q*b*1E3)/1E3;b=Math.round(f*g*q*(1-b)*1E3)/1E3;h.support.transform?(k.css("transform","translate3d("+a+"px,0,0)"),n.css("transform","translate3d("+e+"px,0,0)"),m.css("transform","translate3d("+c+"px,0,0)"),p.css("transform",
+"translate3d("+b+"px,0,0)")):(k.css("left",a),n.css("margin-left",e),m.css("left",c),p.css("margin-left",b))},0,1,h.duration,function(){l.hide();n.remove();p.remove();t.trigger("effectEnd")})}};
