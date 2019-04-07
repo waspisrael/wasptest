@@ -463,8 +463,8 @@
         {
           "_params": {
             "autoplay": true,
-            "animType": "blinds",
-            "theme": "balance",
+            "animType": "fade",
+            "theme": "calm",
             "slides": [
               {
                 "image": "@PROJECT_PATH@/assets/images/slide3.jpg",
@@ -489,7 +489,7 @@
               {
                 "image": "@PROJECT_PATH@/assets/images/slide1.jpg",
                 "linkUrl": "http://google.com",
-                "link": false,
+                "link": true,
                 "src": "@PROJECT_PATH@/assets/images/slide1.jpg",
                 "tooltip": "@PROJECT_PATH@/assets/images/tooltip1.jpg",
                 "title": "title 3",
@@ -503,7 +503,7 @@
             "responsive": "1",
             "paddingTop": 0,
             "paddingBottom": 0,
-            "captionsEffect": "traces",
+            "captionsEffect": "fade",
             "showBullets": true,
             "bgColor": "#ffffff",
             "timeout": 2,
